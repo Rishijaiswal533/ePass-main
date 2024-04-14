@@ -1,0 +1,130 @@
+.container-fluid {
+    box-shadow: 0px 0px 10px rgba(91, 84, 232, 0.2);
+    margin-left: 8%;
+    margin-right: 8%;
+    background-color:white;
+    
+}
+.form-section {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+  }
+html {
+    background-color: #eaf1fb;
+}
+
+body {
+    background-color:#e1efff;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+#row1 {
+    
+    margin-top: 1%;
+    background-color: #2c5686;
+    text-align: center;
+}
+
+.custom-image {
+    display: inline-block;
+    margin: 0 auto; /* Center the image horizontally */
+    padding: 8px; /* Add padding to center vertically */
+}
+.form-section label {
+    display: block;
+    width: fit-content;
+    margin-bottom: 5px;
+  }
+
+  /* Center align labels for checkboxes and radio buttons */
+  .form-section label.radio-label,
+  .form-section label.checkbox-label {
+    text-align: center;
+  }
+
+  /* Style for the image preview */
+  .image-preview {
+    max-width: 100px;
+    max-height: 100px;
+    margin-top: 10px;
+  }
+  /* Add any custom CSS styles here */
+
+  
+  .center-align {
+    text-align: center;
+  }
+  
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  
+  /* Add styling for image preview */
+  .image-preview {
+    max-width: 100px;
+    max-height: 100px;
+    margin-top: 10px;
+    display: none; /* Hide by default */
+  }
+  /* Add any custom CSS styles here */
+.form-section {
+    margin: 20px;
+    margin-right: 2%;
+    padding: 20px;
+    border: 2px solid rgb(93, 89, 89);
+    border-radius: 5px;
+    background-color: #eaf1fb;
+  }
+  /* Apply consistent styling for select and input elements */
+#district, #service-type, #from-date, #to-date ,#num_of_passengers{
+    width: 90%; /* Set the width to 100% to match other input containers */
+     /* Set the height to match other input containers */
+    padding: 5px; /* Add some padding for spacing */
+    border: 1px solid #ccc; /* Add a border for consistency */
+    border-radius: 5px; /* Add rounded corners */
+  }
+  
+  /* If you want to match the font size and text alignment as well */
+  #district, #service-type, #from-date, #to-date {
+    font-size: 16px; /* Adjust the font size as needed */
+    text-align: left; /* Set text alignment as needed */
+  }
+  
+  .center-align {
+    text-align: center;
+  }
+  
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  
+  /* Add styling for image preview */
+  .image-preview {
+    max-width: 100px;
+    max-height: 100px;
+    margin-top: 10px;
+    display: none; /* Hide by default */
+  }
+  /* Style for the green button */
+.green-button {
+    background-color: #4CAF50; /* Green background color */
+    color: #fff; /* Text color */
+    padding: 10px 20px; /* Padding for the button */
+    border: none; /* Remove button border */
+    border-radius: 5px; /* Add rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s; /* Smooth transition on hover */
+  }
+  
+  /* Hover effect for the green button */
+  .green-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  

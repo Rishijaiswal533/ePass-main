@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Token Status Checker</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: #163e77; /* Set background color */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card {
+            width: 90%;
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .container-fluid {
+            width: 70%;
+            margin: 20px auto;
+        }
+
+        h1 {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .container-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        input[type="text"] {
+            padding: 15px;
+            margin: 15px;
+            border: 2px solid #2c5686;
+            border-radius: 8px;
+            width: 100%;
+        }
+
+        input[type="button"] {
+            background-color: #2c5686;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 15px 30px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        input[type="button"]:hover {
+            background-color: #1d6fa5;
+        }
+
+        #tokenStatus {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                width: 100%;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            input[type="text"] {
+                padding: 10px;
+                margin: 10px;
+            }
+
+            input[type="button"] {
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+
+        <div class="container-fluid">
+
+            <h1>Please Enter Your Token ID below:</h1>
+            <div id="tokenStatus" class="container-row" style="background-color: #e3ebf6;">
+                <!-- Token status will be displayed here -->
+            </div>
+            <div class="container-row">
+                <input type="text" id="token" placeholder="Token Number" required>
+                <input type="button" value="Check Token" id="checkTokenButton">
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById("checkTokenButton").addEventListener("click", function () {
+            var token = document.getElementById("token").value;
+            var tokenStatusElement = document.getElementById("tokenStatus");
+        
+            if (token.trim() === '') {
+                tokenStatusElement.innerHTML = "Please enter a token.";
+                return;
+            }
+        
+            // Make an AJAX request to check the token
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'download.php?token=' + token, true);
+        
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    tokenStatusElement.innerHTML = xhr.responseText;
+                } else {
+                    console.log("HTTP Status: " + xhr.status);
+                    console.log("Response: " + xhr.responseText); // Log the response
+                    tokenStatusElement.innerHTML = "Error checking the token.";
+                }
+            };
+        
+            xhr.send();
+        });
+    </script>
+
+</body>
+</html>

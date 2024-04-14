@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="../css/form.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Service Form</title>
+</head>
+<style>
+    /* Add CSS styles to align form elements in a row */
+    .container {
+        width: 60%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; /* Align both horizontally and vertically */
+        background-color: #dddef6;
+        border: 2px solid rgb(53, 53, 53);
+        padding: 15px; /* Add more vertical spacing */
+        border-radius: 2px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .radio-container, .radio-label, label {
+        display: inline;
+    }
+
+    .radio-container {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .radio-label, label {
+        font-size: 16px;
+        margin-right: 10px;
+    }
+
+    .radio-button, select {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .button {
+        
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        border: none;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin: 0 auto; /* Add this line to center align the button */
+        display: block; /* Make the button a block-level element for center alignment */
+    }
+    
+    .button:hover {
+        background-color: #45a049;
+    }
+    
+    #registration-type-container {
+        display: none;
+    }
+</style>
+
+<body>
+    <div class="container-fluid" style="width: 84%;">
+        <div class="row" id="row1">
+            <div class="col-12">
+                <img src="../apply/t.png" alt="Centered Image" class="custom-image" style="width: 100px; border-radius: 50%;">
+            </div>
+        </div>
+        <form id="main-form">
+            <div class="container">
+                <div class="radio-container">
+                    <label class="radio-label">Do you need to visit outside of Maharashtra?</label>
+                    <input type="radio" id="visit-outside-yes" name="visit-outside" class="radio-button" value="yes">
+                    <label class="radio-label" for="visit-outside-yes">Yes</label>
+                    <input type="radio" id="visit-outside-no" name="visit-outside" class="radio-button" value="no">
+                    <label class="radio-label" for="visit-outside-no">No</label>
+                </div>
+            </div>
+            <div class="container" id="registration-type-container">
+                <div class="radio-container">
+                    <label for="registration-type" class="radio-label">Select The Co-Passenger</label>
+                    <select id="registration-type" name="registration-type" class="radio-button">
+                        <option value="interstate/interstate-individual">Interstate-(less than 5 people)</option>
+                        <option value="interstate/interstate-more-than-5">Interstate-(more than or equal to 5)</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="button">Get Form</button><br><br><br>
+        </form>
+    </div>
+
+    <script>
+        var registrationTypeContainer = document.getElementById("registration-type-container");
+        var visitOutsideYes = document.getElementById("visit-outside-yes");
+        var visitOutsideNo = document.getElementById("visit-outside-no");
+
+        visitOutsideYes.addEventListener("click", function() {
+            registrationTypeContainer.style.display = "block";
+        });
+
+        visitOutsideNo.addEventListener("click", function() {
+            registrationTypeContainer.style.display = "none";
+        });
+
+        document.getElementById("main-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var formData = new FormData(this);
+            var visitOutside = formData.get("visit-outside");
+            var registrationType = formData.get("registration-type");
+
+            var pageUrl;
+
+            if (visitOutside === "yes") {
+                if (registrationType === "interstate/interstate-individual") {
+                    pageUrl = "../form/y1.html";
+                } else if (registrationType === "interstate/interstate-more-than-5") {
+                    pageUrl = "../form/y2.html";
+                }
+            } else if (visitOutside === "no") {
+                pageUrl = "../form/n1.html";
+            }
+
+            if (pageUrl) {
+                // Open the selected page in a new window or tab
+                window.open(pageUrl, "_blank");
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+user  { 
+    Emargency ePass { id	district	name	service_type	vehicle_number	mobile_number	email	from_date	to_date	reason	address	passport_photo	licence	token	status	}
+    
+    interstate ePass Registeration { id	token	district	name	from_date	to_date	mobile	reason_for_travel	brief_reason	type_of_vehicle	 vehicle_num	current_address	email	starting_city	ending_city	num_of_passengers	address_of_destination	containment_zone	outofstate	status p1	p2	p3	p4	p5	p6	}
+
+    Outerstate less than 5 people ePass Registeration  {id token   district    name    from_date   to_date mobile  reason_for_travel   brief_reason    type_of_vehicle  vehicle_num    current_address email   starting_city   ending_city num_of_passengers   address_of_destination  containment_zone    outofstate  status p1   p2  p3  p4 }
+
+    Outerstate more than 5 people ePass Registeration  {id token   district    name    from_date   to_date mobile  reason_for_travel   brief_reason    type_of_vehicle  vehicle_num    current_address email   starting_city   ending_city num_of_passengers   address_of_destination  containment_zone    outofstate  status p1   p2  p3  p4 p5 p6 }
+    
+    Downlosd pass {status View using Token Number  { pending , approved , reject , Waiting } }
+
+}
+Admin login (puna , r , 1 ) {
+    Dashboard (Count The Number of application view table [ view form (approved , reject )] ) { Report a Pass coming from another city , Pending Applications , Approved Applications , Rejected Applications , Expired Applications  }
+   
+    Registeration ( Emargency ePass { id	district	name	service_type	vehicle_number	mobile_number	email	from_date	to_date	reason	address	passport_photo	licence	token	status )
+}
+register for ePass token number and download link send to mobile number in localhost .
+
+all the function are implemented .

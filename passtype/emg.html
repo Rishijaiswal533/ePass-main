@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        /* Apply consistent styling for select and input elements */
+        select,
+        input,
+        textarea {
+            width: 100%;
+            height: 40px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            text-align: left;
+        }
+
+        ol,
+        li,
+        h6 {
+            font-family: Calibri;
+            font-size: 12pt;
+            text-align: left;
+        }
+
+        html {
+            background-color: #eaf1fb;
+        }
+
+        body {
+            background-color: #e1efff;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #row1 {
+            background-color: #2c5686;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .custom {
+            border: 1px solid #56565c;
+            border-radius: 5px;
+            padding: 15px;
+            background-color: #eaf1fb;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .custom b {
+            font-size: 14px;
+            display: block;
+            text-align: center;
+            background-color: #2c5686;
+            color: #fff;
+            padding: 5px 20px;
+            border-radius: 20px;
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .custom ol {
+            list-style-type: decimal;
+            padding-left: 20px;
+        }
+
+        .custom ol li {
+            margin: 10px 0;
+        }
+
+        .animate__animated.animate__flash {
+            animation: flash 1s infinite;
+        }
+
+        .btn:hover {
+            background-color: #ed1405;
+            color: #fff;
+            transition: 0.3s;
+        }
+
+        .btn {
+           
+            background-color: #5c9962;
+            color: white;
+        }
+       
+
+        .container-fluid {
+            box-shadow: 0px 0px 10px rgba(91, 84, 232, 0.2);
+            background-color: white;
+        }
+        .form-section{
+            margin-left: 5%;
+            margin-right: 5%;
+            margin-bottom: 2%;
+            border: 1px solid rgb(119, 114, 114);
+            background-color: #e3ecf7;
+            padding: 1%;
+            border-radius: 1%;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+
+        <div class="row" id="row1">
+            <div class="col-12">
+                <br>
+                <h5 style="color: white;">Emergency Service Form</h5>
+            </div>
+        </div>
+        <br> <br>
+        <div class="row">
+            <form action="emg.php" method="post" enctype="multipart/form-data">
+
+                <div class="form-section">
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <label for="district">District</label>
+                            <select name="district" class="form-control">
+                                <option value="nagpur">Nagpur</option>
+                                <option value="pune">Pune</option>
+                                <!-- Add more district options -->
+                            </select>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="name">Name</label>
+                            <input type="text" name="name" class="form-control">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="service-type">Type of Service</label>
+                            <select name="service-type" class="form-control">
+                                <option value="personal">Personal</option>
+                                <option value="organization">Organization</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="type_of_vehicle">Type of Vehicle</label>
+                            <select name="type_of_vehicle" class="form-control">
+                                <option value="car">Car</option>
+                                <option value="bike">Bike</option>
+                                <option value="bus">Bus</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="vehicle-number">Vehicle Number</label>
+                            <input type="text" name="vehicle-number" class="form-control">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="mobile-number">Mobile Number</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">+91</span>
+                                </div>
+                                <input type="text" name="mobile-number" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" class="form-control">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="from-date">From Date</label>
+                            <input type="date" name="from-date" class="form-control">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="to-date">To Date</label>
+                            <input type="date" name="to-date" class="form-control">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="reason">Purpose of Visit</label>
+                            <textarea name="reason" class="form-control"></textarea>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="address">Address</label>
+                            <textarea name="address" class="form-control"></textarea>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="num_of_passengers">Number of Passengers</label>
+                            <select name="num_of_passengers" class="form-control">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Attachments</h2>
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <label>Webcam</label>
+                            <input type="text" disabled value="Disabled" class="form-control">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="passport-photo">Attach Passport Size Photo</label>
+                            <input type="file" id="passport-photo" name="passport-photo" onchange="previewImage(this, 'passport-preview')" class="form-control">
+                            <img id="passport-preview" src="" alt="Preview" class="image-preview">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="medical-report">Attach Medical Report</label>
+                            <input type="file" id="medical-report" name="medical-report" onchange="previewImage(this, 'medical-report-preview')" class="form-control">
+                            <img id="medical-report-preview" src="" alt="Preview" class="image-preview">
+                        </div>
+                        <!-- Add more rows with similar structure for other attachments -->
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-12">
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                    </div>
+                </div>
+                <input type="hidden" id="token" name="token" value="">
+                <br><br><br>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- Include Bootstrap JS (optional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Function to generate a random token
+        function generateToken() {
+            const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            let token = '';
+            // First three characters as alphabets
+            for (let i = 0; i < 3; i++) {
+                token += alphabet[Math.floor(Math.random() * alphabet.length)];
+            }
+            // Rest as numbers (14 digits)
+            for (let i = 0; i < 14; i++) {
+                token += Math.floor(Math.random() * 10);
+            }
+            return token;
+        }
+
+        // Function to display image preview
+        function previewImage(input, previewId) {
+            const preview = document.getElementById(previewId);
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';
+                };
+                reader.readAsDataURL(input.files[0]);
+            } else {
+                preview.style.display = 'none';
+            }
+        }
+
+        // Set the generated token to the hidden input field
+        const form = document.querySelector('form');
+        const tokenInput = document.getElementById('token');
+        tokenInput.value = generateToken();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        /* Apply consistent styling for select and input elements */
+        select,
+        input,
+        textarea {
+            width: 100%;
+            height: 40px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            text-align: left;
+        }
+
+        ol,
+        li,
+        h6 {
+            font-family: Calibri;
+            font-size: 12pt;
+            text-align: left;
+        }
+
+        html {
+            background-color: #eaf1fb;
+        }
+
+        body {
+            background-color: #e1efff;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #row1 {
+            background-color: #2c5686;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .custom {
+            border: 1px solid #56565c;
+            border-radius: 5px;
+            padding: 15px;
+            background-color: #eaf1fb;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .custom b {
+            font-size: 14px;
+            display: block;
+            text-align: center;
+            background-color: #2c5686;
+            color: #fff;
+            padding: 5px 20px;
+            border-radius: 20px;
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .custom ol {
+            list-style-type: decimal;
+            padding-left: 20px;
+        }
+
+        .custom ol li {
+            margin: 10px 0;
+        }
+
+        .animate__animated.animate__flash {
+            animation: flash 1s infinite;
+        }
+
+        .btn:hover {
+            background-color: #ed1405;
+            color: #fff;
+            transition: 0.3s;
+        }
+
+        .btn {
+            background-color: #5c9962;
+            color: white;
+        }
+
+        .container-fluid {
+            box-shadow: 0px 0px 10px rgba(91, 84, 232, 0.2);
+            background-color: white;
+        }
+
+        .form-section {
+            margin-left: 0%;
+            margin-right: 0%;
+            margin-bottom: 2%;
+            border: 1px solid rgb(119, 114, 114);
+            background-color: #e3ecf7;
+            padding: 1%;
+            border-radius: 1%;
+        }
+
+        /* 4-column grid layout on larger screens */
+        @media (min-width: 992px) {
+            .form-group .mb-3 {
+                flex: 0 0 22%;
+                max-width: 22%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row" id="row1">
+            <div class="col-12">
+                <h5 style="color: white;">Interstate Service Form</h5>
+            </div>
+        </div>
+        <br>
+        <div class="form-section">
+            <form action="n1.php" method="POST">
+                <div class="form-row">
+                    <!-- First Column -->
+                    <div class="form-group col-md-3">
+                        <label for="district" class="form-label">District</label>
+                        <select id="district" name="district" class="form-select">
+                            <option value="nagpur">Nagpur</option>
+                            <option value="pune">Pune</option>
+                            <!-- Add more district options -->
+                        </select>
+                    </div>
+                    <!-- Second Column -->
+                    <div class="form-group col-md-3">
+                        <label for="name" class="form-label">Name:</label>
+                        <input type="text" name="name" id="name" class="form-control" placeholder="Enter Name">
+                    </div>
+                    <!-- Third Column -->
+                    <div class="form-group col-md-3">
+                        <label for="from_date" class="form-label">From Date:</label>
+                        <input type="date" name="from_date" id="from_date" class="form-control">
+                    </div>
+                    <!-- Fourth Column -->
+                    <div class="form-group col-md-3">
+                        <label for="to_date" class="form-label">To Date:</label>
+                        <input type="date" name="to_date" id="to_date" class="form-control">
+                    </div>
+                </div>
+
+                <!-- Second Row -->
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label for="mobile" class="form-label">Mobile:</label>
+                        <input type="tel" name="mobile" id="mobile" class="form-control" placeholder="+91" value="+91">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="reason_for_travel" class="form-label">Reason for Travel:</label>
+                        <select name="reason_for_travel" id="reason_for_travel" class="form-select">
+                            <option value="business">Business</option>
+                            <option value="medical">Medical</option>
+                            <option value="personal">Personal</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="brief_reason" class="form-label">Brief Reason:</label>
+                        <input type="text" name="brief_reason" id="brief_reason" class="form-control" placeholder="Enter Brief Reason">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="type_of_vehicle" class="form-label">Type of Vehicle:</label>
+                        <select name="type_of_vehicle" id="type_of_vehicle" class="form-select">
+                            <option value="car">Car</option>
+                            <option value="bike">Bike</option>
+                            <option value="bus">Bus</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Third Row -->
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label for="vehicle_num" class="form-label">Vehicle Number:</label>
+                        <input type="text" name="vehicle_num" id="vehicle_num" class="form-control" placeholder="Enter Vehicle Number">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="current_address" class="form-label">Current Address:</label>
+                        <input type="text" name="current_address" id="current_address" class="form-control" placeholder="Enter Current Address">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="email" class="form-label">Email:</label>
+                        <input type="email" name="email" id="email" class="form-control" placeholder="Enter Email">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="starting_city" class="form-label">Starting City:</label>
+                        <select name="starting_city" id="starting_city" class="form-select">
+                            <option value="city1">City 1</option>
+                            <option value="city2">City 2</option>
+                            <option value="city3">City 3</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Fourth Row -->
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label for="ending_city" class="form-label">Ending City:</label>
+                        <select name="ending_city" id="ending_city" class="form-select">
+                            <option value="city1">City 1</option>
+                            <option value="city2">City 2</option>
+                            <option value="city3">City 3</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="num_of_passengers" class="form-label">Number of Passengers:</label>
+                        <select name="num_of_passengers" id="num_of_passengers" class="form-select">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="address_of_destination" class="form-label">Address of Destination:</label>
+                        <input type="text" name="address_of_destination" id="address_of_destination" class="form-control" placeholder="Enter Address of Destination">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="containment_zone" class="form-label">Are you from Containment Zone?</label>
+                        <select name="containment_zone" id="containment_zone" class="form-select">
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+            </div>
+            <div class="form-section">
+                <!-- Co-Passenger Details -->
+                <h3 class="center-heading">Co-Passenger Details</h3>
+
+                <!-- Co-Passenger Row 1 -->
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label for="passenger1_name" class="form-label">Name:</label>
+                        <input type="text" name="passenger1_name" id="passenger1_name" class="form-control" placeholder="Enter Name">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="passenger1_age" class="form-label">Age:</label>
+                        <input type="number" name="passenger1_age" id="passenger1_age" class="form-control" placeholder="Enter Age">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="passenger1_gender" class="form-label">Gender:</label>
+                        <select name="passenger1_gender" id="passenger1_gender" class="form-select">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="passenger1_aadhar" class="form-label">Aadhar Number:</label>
+                        <input type="text" name="passenger1_aadhar" id="passenger1_aadhar" class="form-control" placeholder="Enter Aadhar Number">
+                    </div>
+                </div>
+
+                <!-- Co-Passenger Row 2 -->
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label for="passenger2_name" class="form-label">Name:</label>
+                        <input type="text" name="passenger2_name" id="passenger2_name" class="form-control" placeholder="Enter Name">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="passenger2_age" class="form-label">Age:</label>
+                        <input type="number" name="passenger2_age" id="passenger2_age" class="form-control" placeholder="Enter Age">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="passenger2_gender" class="form-label">Gender:</label>
+                        <select name="passenger2_gender" id="passenger2_gender" class="form-select">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="passenger2_aadhar" class="form-label">Aadhar Number:</label>
+                        <input type="text" name="passenger2_aadhar" id="passenger2_aadhar" class="form-control" placeholder="Enter Aadhar Number">
+                    </div>
+                </div>
+
+                <!-- Co-Passenger Row 3 -->
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label for="passenger3_name" class="form-label">Name:</label>
+                        <input type="text" name="passenger3_name" id="passenger3_name" class="form-control" placeholder="Enter Name">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="passenger3_age" class="form-label">Age:</label>
+                        <input type="number" name="passenger3_age" id="passenger3_age" class="form-control" placeholder="Enter Age">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="passenger3_gender" class="form-label">Gender:</label>
+                        <select name="passenger3_gender" id="passenger3_gender" class="form-select">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="passenger3_aadhar" class="form-label">Aadhar Number:</label>
+                        <input type="text" name="passenger3_aadhar" id="passenger3_aadhar" class="form-control" placeholder="Enter Aadhar Number">
+                    </div>
+                </div>
+
+                <!-- Co-Passenger Row 4 -->
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label for="passenger4_name" class="form-label">Name:</label>
+                        <input type="text" name="passenger4_name" id="passenger4_name" class="form-control" placeholder="Enter Name">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="passenger4_age" class="form-label">Age:</label>
+                        <input type="number" name="passenger4_age" id="passenger4_age" class="form-control" placeholder="Enter Age">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="passenger4_gender" class="form-label">Gender:</label>
+                        <select name="passenger4_gender" id="passenger4_gender" class="form-select">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="passenger4_aadhar" class="form-label">Aadhar Number:</label>
+                        <input type="text" name="passenger4_aadhar" id="passenger4_aadhar" class="form-control" placeholder="Enter Aadhar Number">
+                    </div>
+                </div>
+
+                
+            </form>
+          
+        </div>
+        <div class="text-center" method="POST">
+            <button type="submit" class="btn btn-success btn-submit" id="submit">Submit</button>
+        </div>
+        <br> <br>
+       
+
+        <!-- Include Bootstrap JS (optional) -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    </body>
+
+</html>
